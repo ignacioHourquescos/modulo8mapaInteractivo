@@ -1,6 +1,5 @@
 geocodificadorModulo = (function () {
   var geocodificador // Geocodificador que dada una dirección devuelve una coordenada
-  
     // Permite obtener las coordenadas y las usa con la función llamada por parámtero
   function usaDireccion (direccion, funcionALlamar) {
         /* Completar la función usaDireccion(dirección,funcionALlamar)
@@ -8,6 +7,17 @@ geocodificadorModulo = (function () {
      y que llame a la función pasada por parámetro con los siguientes parámetros
      dirección: la dirección pasada por parámetro
      coordenada: la ubicación de tipo google.maps.LatLng */
+     //------------------COIDGO DE ACA PARA ABAJO AGREGADO---------------------------
+     //var direccion = document.getElementById("agregar").value;
+     geocodificador.geocode({address: direccion}, function(result, status) {
+      if (status === 'OK') {
+        funcionALlamar(direccion, result[0].geometry.location);
+      } else {
+        swal('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+     //-----------------CODIGO DE ACA PARA RRIBA AGREGADO----------------------------
+    
   }
 
     // Inicializo el geocoder que obtiene las corrdenadas a partir de una dirección
