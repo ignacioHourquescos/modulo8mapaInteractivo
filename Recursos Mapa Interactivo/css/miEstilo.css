@@ -276,7 +276,7 @@ label {
 }
 
 #pano {
-    height: 25%;
+    height: 45%;
     position: absolute;
     z-index: 10;
     bottom: 0;

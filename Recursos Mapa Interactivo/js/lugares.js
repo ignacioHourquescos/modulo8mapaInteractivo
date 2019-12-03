@@ -32,6 +32,7 @@ lugaresModulo = (function () {
     autocomplete=new google.maps.places.Autocomplete(input2,options);
     autocomplete=new google.maps.places.Autocomplete(input3,options);
     autocomplete=new google.maps.places.Autocomplete(input4,options);
+
   //----------------------CODIGO DE ACA PARA ARRIBA AGREGADO--------------------
   }
 
