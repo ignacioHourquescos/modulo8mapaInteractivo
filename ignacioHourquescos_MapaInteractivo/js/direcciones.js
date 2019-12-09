@@ -89,19 +89,55 @@ direccionesModulo = (function () {
     })
   }
 
+
     // Calcula la ruta entre los puntos Desde y Hasta con los puntosIntermedios
     // dependiendo de la formaDeIr que puede ser Caminando, Auto o Bus/Subterraneo/Tren
-  function calcularYMostrarRutas () {
-          /* Completar la función calcularYMostrarRutas , que dependiendo de la forma en que el
+    
+    function calcularYMostrarRutas () {
+        /* Completar la función calcularYMostrarRutas , que dependiendo de la forma en que el
          usuario quiere ir de un camino al otro, calcula la ruta entre esas dos posiciones
          y luego muestra la ruta. */
-//-------------------------------DE ACA PARA ABAJO CODIGO AGREGADO---------------
+//-----------------------------CODIGO DE ACA PAR AABAJO AGREGADO----------------------
+    let desde=document.getElementById("desde").value;
+    let hasta=document.getElementById("hasta").value;
+    let comoIr= document.getElementById("comoIr").value;
+//----------------------START WAYPOINTS---------------------
+//------ COIGO FRANCO--------------
+// $("#puntosIntermedios option").each(function() {
+//   // Add $(this).val() to your list
+//   var latLngArray = $(this).val().split(',')
+//   waypoints.push(
+//     {
+//       location: {
+//         lat: Number(latLngArray[0]), 
+//         lng: Number(latLngArray[1])
+//       },
+//       stopover: true
+//     })
+// });
+//-----------------------------------------
+var waypts=[];
+
+$("#puntosIntermedios option").each(function(){
+  var direccion=this.innerHTML;
+  waypts.push({location:direccion, stopover:true});
+})
 
 
+//---------------------END WAYPOINTS-----------------------    
+    let request = {
+        origin: desde,
+        destination: hasta,
+        travelMode: comoIr,
+        waypoints: waypts
+        };
+    servicioDirecciones.route(request, function(result, status) {
+    if (status == 'OK') {
+      mostradorDirecciones.setDirections(result);
+    }
 
-//------------------------------DE ACA PARA ARRIBA CODIGO AGREGADO---------------
-
-
+  });
+//--------------------------CODIGO DE ACA PAR ARRIBA AGREGADO-----------------------------------
   }
 
   return {

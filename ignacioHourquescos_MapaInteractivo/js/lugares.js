@@ -12,7 +12,7 @@ lugaresModulo = (function () {
     var input1=document.getElementById("direccion");
     var input2=document.getElementById("desde");
     var input3=document.getElementById("hasta");
-    var input4=document.getElementById("agreagar");
+    var input4=document.getElementById("agregar");
      // mapa.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     // var defaultBounds = new google.maps.LatLngBounds(
     //   new google.maps.LatLng(-33.8902, 151.1759),
@@ -32,7 +32,6 @@ lugaresModulo = (function () {
     autocomplete=new google.maps.places.Autocomplete(input2,options);
     autocomplete=new google.maps.places.Autocomplete(input3,options);
     autocomplete=new google.maps.places.Autocomplete(input4,options);
-
   //----------------------CODIGO DE ACA PARA ARRIBA AGREGADO--------------------
   }
 

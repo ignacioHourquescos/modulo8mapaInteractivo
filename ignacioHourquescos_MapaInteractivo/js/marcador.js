@@ -11,6 +11,7 @@ marcadorModulo = (function () {
         en la posición pasada por parámetro y mostrarlo en el mapa.
         Este marcador debe tener un título, una animación.
         El marcador que vas a crear debe asignarse a la variable miMarcador */
+
   //--------------------DE ACA PARA AAJO CODIGO AGREGADO............-------
         miMarcador=new google.maps.Marker({
           position:ubicacion,
@@ -30,7 +31,8 @@ marcadorModulo = (function () {
     // Agrega al mapa todos los marcadores.
   function marcadoresEnMapa (marcadores, mapa) {
     for (var i = 0; i < marcadores.length; i++) {
-      marcadores[i].setMap(mapa)
+      marcadores[i].setMap(mapa);
+      console.log(marcadores);
     }
   }
 
